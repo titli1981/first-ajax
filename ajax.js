@@ -18,14 +18,18 @@ $(document).ready(function() {
 
  $("#ajax-ping-pong").click(function(){
      $.ajax({
-         url: 'http://first-ajax-api.herokuapp.com/ping',
+         url: 'http://first-ajax-api.herokuapp.com/pong',
          method: 'GET' ,
          data: {} ,
          dataType: 'text'
      }).done(function(responseData){
          console.log(responseData);
          $("#step3456").append(responseData);
-
+     }).fail(function(){
+         console.log("Sorry, your request has failed!");
+          $("#step3456").append("Sorry, your request has failed!");
+     }).always(function(){
+         console.log("Hey the request finished!")
      });
 
  });
