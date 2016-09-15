@@ -33,6 +33,20 @@ $(document).ready(function() {
      });
 
  });
+
+ $("#ajax-count").click(function(){
+     $.ajax({
+         url: 'http://first-ajax-api.herokuapp.com/count',
+         method: 'GET' ,
+         data: {} ,
+         dataType: 'text'
+     }).done(function(responseData){
+         console.log(responseData);
+         $("#step7").append(responseData);
+     });
+
+ });
+
   /* Your code goes here */
 
 });
