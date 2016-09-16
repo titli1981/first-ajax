@@ -47,6 +47,33 @@ $(document).ready(function() {
 
  });
 
+ $("#ajax-time").click(function(){
+     $.ajax({
+         url: 'http://first-ajax-api.herokuapp.com/time',
+         method: 'GET' ,
+         data: {timezone: 'Asia/Kolkata'} ,
+         dataType: 'text'
+     }).done(function(responseData){
+         console.log(responseData);
+         $("#step8").append(responseData);
+     })
+
+ });
+ $("#ajax-car").click(function(){
+     $.ajax({
+         url: 'http://first-ajax-api.herokuapp.com/a_car',
+         method: 'GET' ,
+         data: {} ,
+         dataType: 'html'
+     }).done(function(responseData){
+         console.log(responseData);
+         $("#step9").append(responseData);
+         $('#response').append(respnseData)
+     })
+
+ });
+
+
   /* Your code goes here */
 
 });
